@@ -1,0 +1,9 @@
+Combine get_possible methods
+
+Make input into a singleton object, and call it instead
+    update/set possible values should be its innate method
+
+GUI
+
+Optimized solving algorithm
+

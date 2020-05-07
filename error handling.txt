@@ -1,0 +1,12 @@
+convert_input:
+    
+    possible errors:
+        - More/less than 81 cells
+        - cell with unexpected value (non-number, non"x")
+    handle:
+        - Should print error, input and terminate
+
+    update_possible_values:
+        if within same row/col/square there are duplicate numbers
+    handle:
+        - Should print error, locate the error positions, print and terminate
