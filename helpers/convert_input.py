@@ -28,11 +28,12 @@ def convert_input(input):
         
         if row < 9:
             row = row + 1
-        else:
+        elif col < 9:
             row = 1
             col = col +1
     
     if row != 9 and col != 9:
+        print("row: {} col: {}".format(row, col))
         cprint("convert_input: there are not enough input!", "red")
     
     return output, error
@@ -42,10 +43,10 @@ def get_square(row, col):
     col_val = math.floor(col/3) + 1
     return row_val + col_val
 
-def make_cell_dict(value, row, col, square):
+def make_cell_dict(value, row, col):
     return {
         "value": value,
         "row": row,
-        "col": col
+        "col": col,
         "square": get_square(row, col)
     }
