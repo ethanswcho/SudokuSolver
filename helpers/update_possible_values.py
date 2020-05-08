@@ -10,11 +10,11 @@ def update_possible_values(input):
         # cell value is already determined. skip.
         if cell["value"] != "x":
             continue
-    
-        # Grab possible values of this cell relative to its row, col and square. 
 
-        #Get a list of 
+        #Get a list of all possible values
         possible_values = get_possible_values(cell, input)
+        print("row: {} col: {} square: {} possible values: ".format(cell["row"], cell["col"], cell["square"]))
+        print(*possible_values, sep= ", ")
 
         if len(possible_values) == 0:
             print("Row: {} Col: {} does not have any possible values...".format(cell["row"], cell["col"]))

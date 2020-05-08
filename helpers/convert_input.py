@@ -17,20 +17,20 @@ def convert_input(input):
         if char == " ":
             continue
             
-        # Expected chars (numbers or "x")
+        # Expected behavior - either a number or "x" (unsolved)
         if char.isdigit() or char == "x":
             output.append(make_cell_dict(char, row, col))
-
         # Unexpected behavior
         else:
             output.append(make_cell_dict("?", row, col))
             error = True
         
-        if row < 9:
-            row = row + 1
-        elif col < 9:
-            row = 1
-            col = col +1
+        # Increment cols and rows
+        if col < 9:
+            col = col + 1
+        elif row < 9:
+            col = 1
+            row = row +1
     
     if row != 9 and col != 9:
         print("row: {} col: {}".format(row, col))
@@ -39,9 +39,9 @@ def convert_input(input):
     return output, error
 
 def get_square(row, col):
-    row_val = math.floor(row/3) * 3
-    col_val = math.floor(col/3) + 1
-    return row_val + col_val
+    row_val = math.floor((row-1)/3) * 3
+    col_val = math.floor((col-1)/3)
+    return row_val + col_val + 1
 
 def make_cell_dict(value, row, col):
     return {

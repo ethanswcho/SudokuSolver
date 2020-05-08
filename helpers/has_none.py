@@ -5,7 +5,7 @@ Parses through cells (list of dicts), and if it encounters a cell with a None as
 def has_none(input):
 
     for cell in input:
-        if cell["value"] is None:
+        if cell["value"] is "x":
             return True
     
     return False
